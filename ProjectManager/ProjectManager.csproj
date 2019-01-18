@@ -189,10 +189,17 @@
     <Compile Include="Migrations\201901151512539_InitialProject.Designer.cs">
       <DependentUpon>201901151512539_InitialProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901171225399_CreateProjectTable.cs" />
+    <Compile Include="Migrations\201901171225399_CreateProjectTable.Designer.cs">
+      <DependentUpon>201901171225399_CreateProjectTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\ProjectManagerContext.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -290,6 +297,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201901151512539_InitialProject.resx">
       <DependentUpon>201901151512539_InitialProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901171225399_CreateProjectTable.resx">
+      <DependentUpon>201901171225399_CreateProjectTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
