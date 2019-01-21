@@ -193,6 +193,10 @@
     <Compile Include="Migrations\201901171225399_CreateProjectTable.Designer.cs">
       <DependentUpon>201901171225399_CreateProjectTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901211520338_PopulateStatusTable.cs" />
+    <Compile Include="Migrations\201901211520338_PopulateStatusTable.Designer.cs">
+      <DependentUpon>201901211520338_PopulateStatusTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -300,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901171225399_CreateProjectTable.resx">
       <DependentUpon>201901171225399_CreateProjectTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901211520338_PopulateStatusTable.resx">
+      <DependentUpon>201901211520338_PopulateStatusTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
