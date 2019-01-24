@@ -1,0 +1,28 @@
+﻿@model ProjectManager.Models.Project
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+<form class="form-horizontal">
+    <div class="form-group">
+        @Html.LabelFor(m => m.ProjectTitle)
+        @Html.TextBoxFor(m => m.ProjectTitle)
+    </div>
+    <div class="form-group">
+        
+    </div>
+    <select class="form-control">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Create</button>
+        </div>
+    </div>
+</form>

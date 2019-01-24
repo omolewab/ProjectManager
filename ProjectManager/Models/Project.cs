@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjectManager.Models
 {
@@ -10,9 +7,7 @@ namespace ProjectManager.Models
     {
         public int Id { get; set; }
 
-        [Required]
-        public ApplicationUser User { get; set; }
-        public string ProjectName { get; set; }
+        public string ProjectTitle { get; set; }
 
         [Required]
         public string ProjectDetails { get; set; }
@@ -20,6 +15,10 @@ namespace ProjectManager.Models
 
         [Required]
         public string TaskHandler { get; set; }
+
+        [Required]
+        public ApplicationUser User { get; set; }
+        [Required]
         public Status Status { get; set; }
 
     }

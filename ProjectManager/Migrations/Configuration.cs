@@ -9,7 +9,8 @@ namespace ProjectManager.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(ProjectManager.Models.ProjectManagerContext context)
