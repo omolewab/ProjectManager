@@ -10,4 +10,11 @@ namespace ProjectManager.Models
         [Required]
         public string Name { get; set; }
     }
+
+    public enum StatusEnum
+    {
+        Completed = 1,
+        Almost_Complete = 2,
+        Started = 3
+    }
 }

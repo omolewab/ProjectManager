@@ -1,4 +1,5 @@
 ﻿@model ProjectManager.Models.Project
+ @using ProjectManager.Models
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,18 +9,24 @@
 <form class="form-horizontal">
     <div class="form-group">
         @Html.LabelFor(m => m.ProjectTitle)
-        @Html.TextBoxFor(m => m.ProjectTitle)
+        @Html.TextBoxFor(m => m.ProjectTitle, new {@class = "form-control" })
     </div>
     <div class="form-group">
-        
+        @Html.LabelFor(m => m.ProjectDetails)
+        @Html.TextAreaFor(m => m.ProjectDetails, new { @class = "form-control" })
     </div>
-    <select class="form-control">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-    </select>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Task)
+        @Html.TextAreaFor(m => m.Task, new { @class = "form-control" })
+    </div> <div class="form-group">
+        @Html.LabelFor(m => m.TaskHandler)
+        @Html.TextBoxFor(m => m.TaskHandler, new { @class = "form-control" })
+    </div> <div class="form-group">
+    @Html.LabelFor(m => m.Status)
+    @Html.DropDownListFor(m => m.Status,
+                new SelectList(Enum.GetValues(typeof(StatusEnum))),
+                "Status")
+</div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-default">Create</button>
