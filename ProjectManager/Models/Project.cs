@@ -20,6 +20,7 @@ namespace ProjectManager.Models
         public ApplicationUser User { get; set; }
         [Required]
         public Status Status { get; set; }
+        public string Date { get; set; }
 
     }
 }

@@ -198,6 +198,10 @@
     <Compile Include="Migrations\201901230954202_OverrideProjectsAndStatuses.Designer.cs">
       <DependentUpon>201901230954202_OverrideProjectsAndStatuses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901291309510_PopulateStatusTable.cs" />
+    <Compile Include="Migrations\201901291309510_PopulateStatusTable.Designer.cs">
+      <DependentUpon>201901291309510_PopulateStatusTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -310,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901230954202_OverrideProjectsAndStatuses.resx">
       <DependentUpon>201901230954202_OverrideProjectsAndStatuses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901291309510_PopulateStatusTable.resx">
+      <DependentUpon>201901291309510_PopulateStatusTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

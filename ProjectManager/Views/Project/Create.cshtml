@@ -1,15 +1,15 @@
-﻿@model ProjectManager.Models.Project
- @using ProjectManager.Models
+﻿@model ProjectManager.ViewModels.CreateFormViewModel
+@using ProjectManager.Models
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Add a Project</h2>
 <form class="form-horizontal">
     <div class="form-group">
         @Html.LabelFor(m => m.ProjectTitle)
-        @Html.TextBoxFor(m => m.ProjectTitle, new {@class = "form-control" })
+        @Html.TextBoxFor(m => m.ProjectTitle, new { @class = "form-control" })
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.ProjectDetails)
@@ -18,18 +18,18 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Task)
         @Html.TextAreaFor(m => m.Task, new { @class = "form-control" })
-    </div> <div class="form-group">
+    </div>
+    <div class="form-group">
         @Html.LabelFor(m => m.TaskHandler)
         @Html.TextBoxFor(m => m.TaskHandler, new { @class = "form-control" })
-    </div> <div class="form-group">
-    @Html.LabelFor(m => m.Status)
-    @Html.DropDownListFor(m => m.Status,
-                new SelectList(Enum.GetValues(typeof(StatusEnum))),
-                "Status")
-</div>
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Create</button>
+        <div class="form-group">
+        @Html.LabelFor(m => m.Date)
+        @Html.TextBoxFor(m => m.Date, new { @class = "form-control" })
         </div>
+    </div> <div class="form-group">
+        @Html.LabelFor(m => m.Status)
+        @Html.DropDownListFor(m => m.Status, new SelectList(Model.Statuses, "Id", "Name"),"", new { @class = "form-control" })
     </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+    
 </form>
