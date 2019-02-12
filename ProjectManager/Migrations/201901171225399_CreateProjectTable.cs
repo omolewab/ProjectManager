@@ -14,8 +14,6 @@ namespace ProjectManager.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         ProjectName = c.String(maxLength: 4000),
                         ProjectDetails = c.String(maxLength: 4000),
-                        Task = c.String(maxLength: 4000),
-                        TaskHandler = c.String(maxLength: 4000),
                         Status_Id = c.Byte(),
                         User_Id = c.String(maxLength: 4000),
                     })

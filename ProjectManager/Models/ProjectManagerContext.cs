@@ -7,8 +7,9 @@ namespace ProjectManager.Models
     public class ProjectManagerContext : IdentityDbContext<ApplicationUser>
     {
 
-        public DbSet<Project> Projects { get; set; }
+        public DbSet<Project> Project { get; set; }
         public DbSet<Status> Statuses { get; set; }
+        public DbSet<ProjectTask> Tasks { get; set; }
 
        
 

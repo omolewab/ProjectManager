@@ -202,6 +202,14 @@
     <Compile Include="Migrations\201901291309510_PopulateStatusTable.Designer.cs">
       <DependentUpon>201901291309510_PopulateStatusTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902040859428_ProjectTask.cs" />
+    <Compile Include="Migrations\201902040859428_ProjectTask.Designer.cs">
+      <DependentUpon>201902040859428_ProjectTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902061506118_AddForeignKeyPropertiesToProject.cs" />
+    <Compile Include="Migrations\201902061506118_AddForeignKeyPropertiesToProject.Designer.cs">
+      <DependentUpon>201902061506118_AddForeignKeyPropertiesToProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -209,9 +217,11 @@
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\ProjectManagerContext.cs" />
     <Compile Include="Models\Status.cs" />
+    <Compile Include="Models\ProjectTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CreateFormViewModel.cs" />
+    <Compile Include="ViewModels\FutureDate.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -317,6 +327,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901291309510_PopulateStatusTable.resx">
       <DependentUpon>201901291309510_PopulateStatusTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902040859428_ProjectTask.resx">
+      <DependentUpon>201902040859428_ProjectTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902061506118_AddForeignKeyPropertiesToProject.resx">
+      <DependentUpon>201902061506118_AddForeignKeyPropertiesToProject.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
