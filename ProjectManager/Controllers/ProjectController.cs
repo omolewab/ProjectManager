@@ -46,7 +46,7 @@ namespace ProjectManager.Controllers
                 UserId = User.Identity.GetUserId(),
                 ProjectTitle = viewModel.ProjectTitle,
                 ProjectDetails = viewModel.ProjectDetails,
-                Date = viewModel.Date,
+                DateTime = viewModel.Date,
                 Status = status,
             };
 

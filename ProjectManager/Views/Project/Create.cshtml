@@ -7,13 +7,14 @@
                 Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Add a Project</h2>
+<h2>Add a Project</h2><br />
 @using (Html.BeginForm("Create", "Project"))
 {
+    <p class="alert alert-info"><strong>All fields are required</strong></p>
     @Html.AntiForgeryToken()
     <div class="form-group">
         @Html.LabelFor(m => m.ProjectTitle)
-        @Html.TextBoxFor(m => m.ProjectTitle, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.ProjectTitle, new { @class = "form-control", autofocus = "autofocus" })
         @Html.ValidationMessageFor(m => m.ProjectTitle)
     </div>
     <div class="form-group">
@@ -28,7 +29,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Date)
-        @Html.TextBoxFor(m => m.Date, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Date, new { @class = "form-control", placeholder = "eg 01 Jan 2019"})
         @Html.ValidationMessageFor(m => m.Date)
     </div> 
     <div class="form-group">

@@ -26,7 +26,7 @@ namespace ProjectManager.Models
         public Status Status { get; set; }
 
         public ICollection<ProjectTask> Tasks { get; set; }
-        public string Date { get; set; }
+        public string DateTime { get; set; }
 
     }
 }
