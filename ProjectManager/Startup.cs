@@ -10,7 +10,7 @@ namespace ProjectManager
         public void Configuration(IAppBuilder app)
         {
             ProjectManagerContext ApplicationContext = new ProjectManagerContext();
-            ApplicationContext.Database.Initialize(false);
+            ApplicationContext.Database.Initialize(true);
             ConfigureAuth(app);
         }
     }

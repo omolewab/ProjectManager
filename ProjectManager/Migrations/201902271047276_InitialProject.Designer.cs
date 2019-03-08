@@ -7,13 +7,13 @@ namespace ProjectManager.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class OverrideProjectsAndStatuses : IMigrationMetadata
+    public sealed partial class InitialProject : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(OverrideProjectsAndStatuses));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialProject));
         
         string IMigrationMetadata.Id
         {
-            get { return "201901230954202_OverrideProjectsAndStatuses"; }
+            get { return "201902271047276_InitialProject"; }
         }
         
         string IMigrationMetadata.Source

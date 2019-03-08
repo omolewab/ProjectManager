@@ -10,8 +10,10 @@ namespace ProjectManager.Models
         public DbSet<Project> Project { get; set; }
         public DbSet<Status> Statuses { get; set; }
         public DbSet<ProjectTask> Tasks { get; set; }
+        public DbSet<UsersProjects> UsersProjects { get; set; }
+        public DbSet<UserTasks> UsersTasks { get; set; }
 
-       
+
 
         public ProjectManagerContext()
             : base("name=ProjectManagerContext", throwIfV1Schema: false)

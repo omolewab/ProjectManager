@@ -4,6 +4,7 @@ using ProjectManager.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -40,13 +41,19 @@ namespace ProjectManager.Controllers
             }
 
             var status = _context.Statuses.Single(t => t.Id == viewModel.Status);
+            
+            DateTime.TryParseExact(viewModel.Date,
+                "dd MMM yyyy",
+                CultureInfo.CurrentCulture,
+                DateTimeStyles.None,
+                out DateTime dateTime);
 
             var project = new Project
             {
                 UserId = User.Identity.GetUserId(),
                 ProjectTitle = viewModel.ProjectTitle,
                 ProjectDetails = viewModel.ProjectDetails,
-                DateTime = viewModel.Date,
+                DateTime = dateTime,
                 Status = status,
             };
 
@@ -56,6 +63,7 @@ namespace ProjectManager.Controllers
                 _context.SaveChanges();
 
             string[] tasks = viewModel.Task.Split(',');
+            var AppUser = _context.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
 
             foreach (var tsk in tasks)
             {
@@ -67,10 +75,19 @@ namespace ProjectManager.Controllers
                     TaskHandler = tskDetails[1]
                 };
 
+                //newTask.Users.Add(AppUser);
                 _context.Tasks.Add(newTask);
                 project.Tasks.Add(newTask);
+                _context.SaveChanges();
+  
+                UserTasks userTask = new UserTasks
+                {
+                    UserId = AppUser.Id,
+                    TaskId = newTask.Id
+                };
+                _context.UsersTasks.Add(userTask);
+                _context.SaveChanges();
             }
-            _context.SaveChanges();
 
             return RedirectToAction("Index", "Home");
         }

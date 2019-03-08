@@ -19,11 +19,24 @@ namespace ProjectManager.Controllers
 
         public ActionResult Index()
         {
-            var newProjects = _context.Project.ToList();
-                
-            return View(newProjects);
+            if (User != null && User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("AfterLogin");
+            }
+            else
+            {
+                return View();
+            }
         }
 
+        public ActionResult AfterLogin()
+        {
+            var AppUser = _context.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
+            var newProjects = _context.Project
+           .Include(g => g.Status).Where(p => p.UserId == AppUser.Id);
 
+
+            return View(newProjects);
+        }
     }
 }

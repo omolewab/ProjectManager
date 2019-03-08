@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ProjectManager.Models.Project>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<ul class="projects">
+    @foreach (var proj in Model)
+    {
+        <li>
+            <div class="Date">
+                <div class="month">
+                    @if (proj.DateTime.HasValue)
+                    {
+                        @proj.DateTime.Value.ToString("MMM")
+                    }
+                </div>
+                <div class="day">
+                    @if (proj.DateTime.HasValue)
+                    {
+                        @proj.DateTime.Value.ToString("d ")
+                    }
+
+                </div>
+            </div>
+
+            <div class="projectdetails">
+                <span class="projecttitle">
+                    @proj.ProjectTitle
+                </span>
+                @*<button data-project-id="@proj.Id" class="btn btn-default btn-sm pull-right js-toggle-userprojects">Added!</button>*@
+            </div>
+        </li>
+    }
+</ul>
+
+@section scripts
+{
+    <script>
+        //$(document).ready(function () {
+        //    $(".js-toggle-userprojects").click(function (e) {
+        //        var button = $(e.target);
+        //        $.post("/api/usersprojects", { "ProjectId": button.attr("data-project-id") })
+        //            .done(function () {
+        //                button
+        //                    .removeClass("btn-default")
+        //                    .addClass("btn-info")
+        //                    .text("Added!");
+        //            })
+        //            .fail(function () {
+        //                alert("Something Went Wrong!")
+        //            })
+        //    });
+        //});
+
+    </script>
+}

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -26,7 +27,7 @@ namespace ProjectManager.Models
         public Status Status { get; set; }
 
         public ICollection<ProjectTask> Tasks { get; set; }
-        public string DateTime { get; set; }
+        public DateTime? DateTime { get; set; }
 
     }
 }

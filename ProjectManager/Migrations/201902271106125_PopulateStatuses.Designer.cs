@@ -7,18 +7,18 @@ namespace ProjectManager.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class PopulateStatusTable : IMigrationMetadata
+    public sealed partial class PopulateStatuses : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PopulateStatusTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(PopulateStatuses));
         
         string IMigrationMetadata.Id
         {
-            get { return "201901291309510_PopulateStatusTable"; }
+            get { return "201902271106125_PopulateStatuses"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target
